@@ -11,39 +11,65 @@ public class PathFollow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         tilemap = FindObjectOfType<Tilemap>();
+        InvokeRepeating("AutoMove", 0f, .5f);
 	}   
-	
+
 	// Update is called once per frame
 	void Update ()
     {
-        print("Is plane over path? " + IsPathTile(transform.position));
         KeyboardMove();
+    }
+
+    private void AutoMove()
+    {
+        Vector3[] moveList = {
+            new Vector3(1f, 0, 0),
+            new Vector3(0, 1f, 0)
+        };
+
+        if (IsValidMove(transform.position + moveList[0]))
+        {
+            Move(moveList[0]);
+        }
+        else if (IsValidMove(transform.position + moveList[1]))
+        {
+            Move(moveList[1]);
+        }
     }
 
     private void KeyboardMove()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            AttemptMove(new Vector3(0, 1, 0));
+            Move(new Vector3(0, 1, 0));
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            AttemptMove(new Vector3(-1, 0, 0));
+            Move(new Vector3(-1, 0, 0));
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            AttemptMove(new Vector3(0, -1, 0));
+            Move(new Vector3(0, -1, 0));
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            AttemptMove(new Vector3(1, 0, 0));
+            Move(new Vector3(1, 0, 0));
         }
     }
 
-    private void AttemptMove(Vector3 movement)
+    private bool IsValidMove(Vector3 newPosition)
+    {
+        if (IsPathTile(newPosition))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private void Move(Vector3 movement)
     {
         Vector3 newPosition = transform.position + movement;
-        if (IsPathTile(newPosition))
+        if (IsValidMove(newPosition))
         {
             transform.position = newPosition;
         }
