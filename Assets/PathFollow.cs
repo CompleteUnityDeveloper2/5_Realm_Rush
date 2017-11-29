@@ -52,7 +52,15 @@ public class PathFollow : MonoBehaviour {
     private bool IsPathTile(Vector3 worldPos)
     {
         Vector3Int cell = tilemap.WorldToCell(worldPos);
-        string tileName = tilemap.GetTile(cell).name;
-        return tileName.Substring(0, 5) == "path_";
+        var tile = tilemap.GetTile(cell);
+        if (tile)
+        {
+            string tileName = tile.name;
+            return tileName.Substring(0, 5) == "path_";
+        }
+        else
+        {
+            return false;
+        }
     }
 }
