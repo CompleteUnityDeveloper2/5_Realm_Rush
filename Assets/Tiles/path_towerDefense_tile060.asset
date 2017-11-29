@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: towerDefense_tile060
+  m_Name: path_towerDefense_tile060
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 7749d2efcea4c48e18e9556c70a38f39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
