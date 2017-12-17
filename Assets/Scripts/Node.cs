@@ -25,7 +25,7 @@ public struct Node
 
     public override string ToString()
     {
-        return XGridPos + "," + ZGridPos;
+        return XGridPos/10 + ", " + ZGridPos/10;
     }
 
 }

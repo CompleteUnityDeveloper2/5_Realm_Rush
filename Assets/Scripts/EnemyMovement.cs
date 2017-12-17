@@ -26,8 +26,9 @@ public class EnemyMovement : MonoBehaviour
         path.Enqueue(new Node(10, 0));
         path.Enqueue(new Node(20, 0));
         path.Enqueue(new Node(30, 0));
-        path.Enqueue(new Node(40, 0));
+        path.Enqueue(new Node(30, 10));
         path.Enqueue(new Node(40, 10));
+        path.Enqueue(new Node(50, 10));
         path.Enqueue(new Node(50, 20));
         path.Enqueue(new Node(60, 20));
         path.Enqueue(new Node(70, 20));
