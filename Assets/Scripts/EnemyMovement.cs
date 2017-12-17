@@ -5,7 +5,7 @@ using System;
 
 public class EnemyMovement : MonoBehaviour
 {    
-    [SerializeField] [Range(0.01f, 10f)] float movementSpeed = 1f;
+    [SerializeField] [Range(0.1f, 100f)] float movementSpeed = 10f;
 
     Queue<Node> path;
     Node startNode, previousNode;
@@ -23,15 +23,15 @@ public class EnemyMovement : MonoBehaviour
     {
         path = new Queue<Node>();
         path.Enqueue(new Node(0, 0));
-        path.Enqueue(new Node(1, 0));
-        path.Enqueue(new Node(2, 0));
-        path.Enqueue(new Node(3, 0));
-        path.Enqueue(new Node(4, 0));
-        path.Enqueue(new Node(4, 1));
-        path.Enqueue(new Node(5, 2));
-        path.Enqueue(new Node(6, 2));
-        path.Enqueue(new Node(7, 2));
-        path.Enqueue(new Node(8, 2));
+        path.Enqueue(new Node(10, 0));
+        path.Enqueue(new Node(20, 0));
+        path.Enqueue(new Node(30, 0));
+        path.Enqueue(new Node(40, 0));
+        path.Enqueue(new Node(40, 10));
+        path.Enqueue(new Node(50, 20));
+        path.Enqueue(new Node(60, 20));
+        path.Enqueue(new Node(70, 20));
+        path.Enqueue(new Node(80, 20));
     }
 
     void MoveToStart()

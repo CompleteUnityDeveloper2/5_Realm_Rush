@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockCoordinate : MonoBehaviour {
-
-
-
+    
     // Use this for initialization
     void Start () {
         Node node = new Node(
