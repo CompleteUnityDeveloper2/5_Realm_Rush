@@ -5,7 +5,7 @@ using System;
 
 public class EnemyMovement : MonoBehaviour
 {    
-    [SerializeField] float movementSpeed = 1f;
+    [SerializeField] [Range(0.01f, 10f)] float movementSpeed = 1f;
 
     Queue<Node> path;
     Node startNode, previousNode;
@@ -28,7 +28,6 @@ public class EnemyMovement : MonoBehaviour
         path.Enqueue(new Node(5, 2));
         path.Enqueue(new Node(6, 2));
         path.Enqueue(new Node(7, 2));
-        print("Path setup");
     }
 
     void MoveToStart()
@@ -43,25 +42,23 @@ public class EnemyMovement : MonoBehaviour
         while (path.Count > 0)
         {
             Node destinationNode = path.Dequeue();
-            yield return StartCoroutine(MoveToNode(destinationNode));
-            yield return new WaitForSeconds(1f);
             previousNode = destinationNode;
+            yield return StartCoroutine(MoveToNode(destinationNode));
         }
-        print("Done");
     }
 
     IEnumerator MoveToNode(Node node)
     {
-        print("Moving to " + node.ToString()); 
-        Vector3 translation;
+        float distanceRemaining;
+        float distancePerFrame = movementSpeed * Time.deltaTime;
         do
         {
-            translation = node.Position - transform.position;
-            transform.Translate(translation.normalized * Time.deltaTime);
-            print(translation.magnitude);
+            distanceRemaining = (node.Position - transform.position).magnitude; 
+            Vector3 direction = (node.Position - transform.position).normalized;
+            transform.Translate(direction * distancePerFrame);
             yield return null; // wait a frame
         }
-        while (translation.magnitude > 0.1f);
+        while (distanceRemaining > distancePerFrame);
         yield return null;
     }
 }

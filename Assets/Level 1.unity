@@ -423,35 +423,45 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.94944
+      value: 3.3175297
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.7803545
+      value: 7.779519
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.569427
+      value: 1.0129458
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.26796973
+      value: -0.7071069
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.34468088
+      value: -0.000000029802319
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.10334913
+      value: -0.000000029802319
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.8937037
+      value: -0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 4107435510518216, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20779197372817268, guid: 514a8418567104baf8d3cbe454c7491a,
+        type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20779197372817268, guid: 514a8418567104baf8d3cbe454c7491a,
+        type: 2}
+      propertyPath: orthographic size
+      value: 2.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 514a8418567104baf8d3cbe454c7491a, type: 2}
