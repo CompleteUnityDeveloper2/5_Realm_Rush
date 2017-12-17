@@ -18,9 +18,12 @@ public class EnemyMovement : MonoBehaviour
         StartCoroutine(FollowPath());
     }
 
+    // todo move data out
     void SetupPath()
     {
         path = new Queue<Node>();
+        path.Enqueue(new Node(0, 0));
+        path.Enqueue(new Node(1, 0));
         path.Enqueue(new Node(2, 0));
         path.Enqueue(new Node(3, 0));
         path.Enqueue(new Node(4, 0));
@@ -28,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
         path.Enqueue(new Node(5, 2));
         path.Enqueue(new Node(6, 2));
         path.Enqueue(new Node(7, 2));
+        path.Enqueue(new Node(8, 2));
     }
 
     void MoveToStart()
