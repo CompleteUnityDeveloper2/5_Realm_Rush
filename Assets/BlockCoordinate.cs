@@ -14,6 +14,6 @@ public class BlockCoordinate : MonoBehaviour {
         );
 
         TextMesh debugText = GetComponent<TextMesh>();
-        debugText.text = node.XGridPos + "," + node.ZGridPos;
+        debugText.text = node.ToString();
     }
 }

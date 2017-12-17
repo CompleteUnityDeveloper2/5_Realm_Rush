@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node
+public struct Node
 {
     int xGridPos;
     int zGridPos;
@@ -15,4 +15,10 @@ public class Node
         xGridPos = x;
         zGridPos = z;
     }
+
+    public override string ToString()
+    {
+        return XGridPos + "," + ZGridPos;
+    }
+
 }
