@@ -9,6 +9,13 @@ public struct Node
 
     public int XGridPos { get { return xGridPos; } }
     public int ZGridPos { get { return zGridPos; } }
+    public Vector3Int Position
+    { 
+        get
+        {
+            return new Vector3Int(xGridPos, 0, zGridPos);
+        }
+    }
 
     public Node(int x, int z)
     {
