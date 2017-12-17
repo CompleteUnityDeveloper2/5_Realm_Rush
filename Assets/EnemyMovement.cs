@@ -5,8 +5,10 @@ using System;
 
 public class EnemyMovement : MonoBehaviour {
 
-    [SerializeField] List<Node> path;
-        
+    [SerializeField] Queue<Node> path;
+
+    Node previousNode;
+
     // Use this for initialization
     void Start()
     {
@@ -16,21 +18,24 @@ public class EnemyMovement : MonoBehaviour {
 
     private void SetupPath()
     {
-        path = new List<Node>();
-        path.Add(new Node(2, 0));
-        path.Add(new Node(3, 0));
-        path.Add(new Node(4, 0));
-        path.Add(new Node(4, 1));
+        path = new Queue<Node>();
+        path.Enqueue(new Node(2, 0));
+        path.Enqueue(new Node(3, 0));
+        path.Enqueue(new Node(4, 0));
+        path.Enqueue(new Node(4, 1));
         print("Path setup"); 
     }
 
 
     IEnumerator FollowPath()
     {
-        print("Setting off"); 
-        foreach (Node node in path)
+        previousNode = path.Dequeue();
+
+        while (path.Count > 0)
         {
-            yield return StartCoroutine(MoveToNode(node));
+            Node destinationNode = path.Dequeue();
+            yield return StartCoroutine(MoveToNode(destinationNode));
+            previousNode = destinationNode;
         }
         print("Done");
 
@@ -38,7 +43,8 @@ public class EnemyMovement : MonoBehaviour {
 
     IEnumerator MoveToNode(Node node)
     {
-        print("Moving to " + node.ToString());
+        print("Moving from " + previousNode.ToString() + " to " + node.ToString());
+
         yield return new WaitForSeconds(1f);
     }
 }
