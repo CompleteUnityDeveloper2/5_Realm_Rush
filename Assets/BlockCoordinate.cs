@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class BlockCoordinate : MonoBehaviour {
 
-    int xGridPos, zGridPos;
+
 
     // Use this for initialization
     void Start () {
-        xGridPos = Mathf.RoundToInt(transform.position.x);
-        zGridPos = Mathf.RoundToInt(transform.position.z);
+        Node node = new Node(
+            Mathf.RoundToInt(transform.position.x),
+            Mathf.RoundToInt(transform.position.z)
+        );
 
         TextMesh debugText = GetComponent<TextMesh>();
-        debugText.text = xGridPos + "," + zGridPos;
+        debugText.text = node.XGridPos + "," + node.ZGridPos;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
