@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// todo do we even need this concept?
 public struct Node
 {
     int xGridPos;

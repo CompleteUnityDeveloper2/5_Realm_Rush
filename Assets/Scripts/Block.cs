@@ -5,17 +5,10 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Block : MonoBehaviour {
 
-    [SerializeField] Texture placeable;
-    [SerializeField] Texture illegal;
-    [SerializeField] bool isPlaceable = true;
+    [SerializeField] bool isPath = true;
 
     Vector3 snapPos = new Vector3();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update ()
     {

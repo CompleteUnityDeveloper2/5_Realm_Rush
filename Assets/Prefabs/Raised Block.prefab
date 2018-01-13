@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4516845054138398}
   - component: {fileID: 114451090290327532}
   m_Layer: 0
-  m_Name: Blocking Tile
+  m_Name: Raised Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,6 +659,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb5ecfe34d7b4915be3bad846e178d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeable: {fileID: 0}
-  illegal: {fileID: 0}
-  isPlaceable: 1
+  isPath: 0
