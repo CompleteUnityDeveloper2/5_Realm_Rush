@@ -109,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884508921640718}
   - component: {fileID: 114278144093355556}
+  - component: {fileID: 114297873879030502}
   m_Layer: 0
   m_Name: Path Block
   m_TagString: Untagged
@@ -238,7 +239,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776290644336158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 20}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4513011518593842}
@@ -634,7 +635,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408157417707290}
-  m_Text: 2, 2
+  m_Text: 2, 0
   m_OffsetZ: -0.01
   m_CharacterSize: 0.15
   m_LineSpacing: 1
@@ -656,7 +657,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1776290644336158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb5ecfe34d7b4915be3bad846e178d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 082f923fc945d4e0d8fb7285baa2cf51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114297873879030502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776290644336158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d443568353f437d8ca2dd4b1387926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPath: 1
+  gridPos: {x: 2, y: 0}

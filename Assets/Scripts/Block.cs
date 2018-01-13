@@ -1,40 +1,20 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Block : MonoBehaviour {
 
     [SerializeField] bool isPath = true;
+    public Vector2Int gridPos; // todo make private
 
-    int gridScale = 10;
-    public Vector3Int gridPos; // todo make private
-
+	// Use this for initialization
+	void Start () {
+        gridPos.x = Mathf.RoundToInt(transform.position.x / 10);
+        gridPos.y = Mathf.RoundToInt(transform.position.z / 10);
+	}
+	
 	// Update is called once per frame
-	void Update ()
-    {
-        if (Application.isEditor)
-        {
-            LabelBlocks();
-            SnapBlocks(); // note better if order independent
-        }
-        else
-        {
-            // do nothing for now
-        }
-    }
-
-    private void LabelBlocks()
-    {
-        TextMesh debugText = GetComponentInChildren<TextMesh>();
-        debugText.text = gridPos.x / gridScale + ", " + gridPos.z / gridScale;
-    }
-
-    private void SnapBlocks()
-    {
-        gridPos.x = Mathf.RoundToInt(transform.position.x / gridScale) * gridScale;
-        gridPos.z = Mathf.RoundToInt(transform.position.z / gridScale) * gridScale;
-        transform.position = gridPos;
-    }
+	void Update () {
+		
+	}
 }
