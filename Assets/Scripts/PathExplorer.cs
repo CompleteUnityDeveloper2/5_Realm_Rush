@@ -7,33 +7,34 @@ using UnityEngine;
 public class PathExplorer : MonoBehaviour {
 
     UnityEngine.Object[] blocks;
-    List<Vector2Int> testedBlocks = new List<Vector2Int>();
+    HashSet<Vector2Int> testedBlocks = new HashSet<Vector2Int>();
 
 	// Use this for initialization
 	void Start ()
     {
-        if (Application.isPlaying)
+        Block firstOverlappingBlock = BlocksOverlap();
+        if (firstOverlappingBlock)
         {
-            print("Checking for overlaps...");
-            print(CheckForOverlappingBlocks());
+            Debug.LogError(
+                firstOverlappingBlock.name + " at " +
+                firstOverlappingBlock.gridPos + " is overlapping, please remove"
+            );
+        }
+        else
+        {
+            Debug.Log("No overlapping blocks, good job!");
         }
 	}
 
-    private bool CheckForOverlappingBlocks()
+    private Block BlocksOverlap()
     {
         blocks = FindObjectsOfType(typeof(Block));
         foreach (Block block in blocks)
         {
-            if (testedBlocks.Contains(block.gridPos))
-            {
-                Debug.LogError(block.name + " at " + block.gridPos + " is overlapping, please remove");
-                return true;
-            }
-            else
-            {
-                testedBlocks.Add(block.gridPos);
-            }
+            bool positionOccupied = testedBlocks.Contains(block.gridPos);
+            if (positionOccupied) { return block; }
+            testedBlocks.Add(block.gridPos);
         }
-        return false;
+        return null;
     }
 }

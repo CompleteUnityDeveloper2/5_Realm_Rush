@@ -33,7 +33,6 @@ public class BlockEditor : MonoBehaviour {
         {
             debugText.text = block.gridPos.x + ", " + block.gridPos.y; // note is z
         }
-
     }
 
     private void SnapBlocks()
