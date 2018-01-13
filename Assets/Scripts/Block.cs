@@ -7,7 +7,8 @@ public class Block : MonoBehaviour {
 
     [SerializeField] bool isPath = true;
 
-    Vector3 snapPos = new Vector3();
+    int gridScale = 10;
+    Vector3Int gridPos = new Vector3Int(); // todo make pricate
 
 	// Update is called once per frame
 	void Update ()
@@ -18,15 +19,14 @@ public class Block : MonoBehaviour {
 
     private void LabelBlock()
     {
-        Node node = new Node((int)snapPos.x, (int)snapPos.z);
         TextMesh debugText = GetComponentInChildren<TextMesh>();
-        debugText.text = node.ToString();
+        debugText.text = gridPos.x / gridScale + ", " + gridPos.z / gridScale;
     }
 
     private void SnapToGrid()
     {
-        snapPos.x = Mathf.Round(transform.position.x / 10f) * 10f;
-        snapPos.z = Mathf.Round(transform.position.z / 10f) * 10f;
-        transform.position = snapPos;
+        gridPos.x = Mathf.RoundToInt(transform.position.x / gridScale) * gridScale;
+        gridPos.z = Mathf.RoundToInt(transform.position.z / gridScale) * gridScale;
+        transform.position = gridPos;
     }
 }
