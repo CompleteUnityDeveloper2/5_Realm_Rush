@@ -21,7 +21,7 @@ public class BlockEditor : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        LabelBlocks(Application.isPlaying);
+        LabelBlocks(false);//Application.isPlaying);
         SnapBlocks(); // note better if order independent
      }
 
