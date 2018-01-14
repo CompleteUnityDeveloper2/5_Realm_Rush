@@ -9,10 +9,13 @@ public class BlockEditor : MonoBehaviour {
 
     int gridScale = 10;
     Block block;
+    Vector2Int gridPos;
 
     void Start()
     {
         block = GetComponent<Block>();
+        gridPos.x = Mathf.RoundToInt(transform.position.x / 10);
+        gridPos.y = Mathf.RoundToInt(transform.position.z / 10); 
     }
 
 	// Update is called once per frame
@@ -31,14 +34,13 @@ public class BlockEditor : MonoBehaviour {
         }
         else
         {
-            Vector2Int gridPos = block.GetGridPos();
             debugText.text = gridPos.x + ", " + gridPos.y; // note is z
         }
     }
 
     private void SnapBlocks()
     {
-        Vector2Int gridPos = block.GetGridPos();
+
         gridPos.x = Mathf.RoundToInt(transform.position.x / gridScale);
         gridPos.y = Mathf.RoundToInt(transform.position.z / gridScale);
         transform.position = new Vector3(gridPos.x, 0, gridPos.y) * gridScale;

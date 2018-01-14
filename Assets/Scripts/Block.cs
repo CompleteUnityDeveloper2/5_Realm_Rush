@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[SelectionBase]
 public class Block : MonoBehaviour {
 
     // todo stop exposing these or make readonly
@@ -23,5 +24,10 @@ public class Block : MonoBehaviour {
     public Vector2Int GetGridPos()
     {
         return gridPos;
+    }
+
+    public bool IsExplored()
+    {
+        return explored;
     }
 }
