@@ -13,8 +13,8 @@ public class Block : MonoBehaviour {
         gridPos.y = Mathf.RoundToInt(transform.position.z / 10);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void SetBlocked()
+    {
+        isPath = false;
+    }
 }

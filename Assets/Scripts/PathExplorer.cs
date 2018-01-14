@@ -6,11 +6,19 @@ using UnityEngine;
 
 public class PathExplorer : MonoBehaviour {
 
+    [SerializeField] Block startBlock, endBlock;
+
     UnityEngine.Object[] blocks;
     HashSet<Vector2Int> testedBlocks = new HashSet<Vector2Int>();
 
 	// Use this for initialization
 	void Start ()
+    {
+        CheckForOverlappingBlocks();
+
+    }
+
+    private void CheckForOverlappingBlocks()
     {
         Block firstOverlappingBlock = BlocksOverlap();
         if (firstOverlappingBlock)
@@ -24,7 +32,7 @@ public class PathExplorer : MonoBehaviour {
         {
             Debug.Log("No overlapping blocks, good job!");
         }
-	}
+    }
 
     private Block BlocksOverlap()
     {
