@@ -31,14 +31,16 @@ public class BlockEditor : MonoBehaviour {
         }
         else
         {
-            debugText.text = block.gridPos.x + ", " + block.gridPos.y; // note is z
+            Vector2Int gridPos = block.GetGridPos();
+            debugText.text = gridPos.x + ", " + gridPos.y; // note is z
         }
     }
 
     private void SnapBlocks()
     {
-        block.gridPos.x = Mathf.RoundToInt(transform.position.x / gridScale);
-        block.gridPos.y = Mathf.RoundToInt(transform.position.z / gridScale);
-        transform.position = new Vector3(block.gridPos.x, 0, block.gridPos.y) * gridScale;
+        Vector2Int gridPos = block.GetGridPos();
+        gridPos.x = Mathf.RoundToInt(transform.position.x / gridScale);
+        gridPos.y = Mathf.RoundToInt(transform.position.z / gridScale);
+        transform.position = new Vector3(gridPos.x, 0, gridPos.y) * gridScale;
     }
 }

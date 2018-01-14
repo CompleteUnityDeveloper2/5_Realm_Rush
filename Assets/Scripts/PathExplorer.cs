@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Assertions;
 
 public class PathExplorer : MonoBehaviour {
 
@@ -14,8 +14,15 @@ public class PathExplorer : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        CheckForOverlappingBlocks();
+        blocks = FindObjectsOfType(typeof(Block));
+        CheckForValidMap();
+    }
 
+    private void CheckForValidMap()
+    {
+        CheckForOverlappingBlocks();
+        Debug.Assert(startBlock, "No start block found");
+        Debug.Assert(endBlock, "No end block found");
     }
 
     private void CheckForOverlappingBlocks()
@@ -25,7 +32,7 @@ public class PathExplorer : MonoBehaviour {
         {
             Debug.LogError(
                 firstOverlappingBlock.name + " at " +
-                firstOverlappingBlock.gridPos + " is overlapping, please remove"
+                firstOverlappingBlock.GetGridPos() + " is overlapping, please remove"
             );
         }
         else
@@ -36,13 +43,15 @@ public class PathExplorer : MonoBehaviour {
 
     private Block BlocksOverlap()
     {
-        blocks = FindObjectsOfType(typeof(Block));
         foreach (Block block in blocks)
         {
-            bool positionOccupied = testedBlocks.Contains(block.gridPos);
+            Vector2Int gridPos = block.GetGridPos();
+            bool positionOccupied = testedBlocks.Contains(gridPos);
             if (positionOccupied) { return block; }
-            testedBlocks.Add(block.gridPos);
+            testedBlocks.Add(gridPos);
         }
         return null;
     }
+   
+
 }

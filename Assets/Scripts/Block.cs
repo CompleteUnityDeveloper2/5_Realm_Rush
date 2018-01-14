@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
-    [SerializeField] bool isPath = true;
-    public Vector2Int gridPos; // todo make private
+    // todo stop exposing these or make readonly
+    [SerializeField] Vector2Int gridPos;
+    [SerializeField] bool blocked = false;
+    [SerializeField] bool explored = false;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +17,11 @@ public class Block : MonoBehaviour {
 	
     public void SetBlocked()
     {
-        isPath = false;
+        blocked = false;
+    }
+
+    public Vector2Int GetGridPos()
+    {
+        return gridPos;
     }
 }
