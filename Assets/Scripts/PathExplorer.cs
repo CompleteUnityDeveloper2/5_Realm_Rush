@@ -31,6 +31,7 @@ public class PathExplorer : MonoBehaviour
         Debug.Assert(startBlock, "No start block found");
         Debug.Assert(endBlock, "No end block found");
         LoadBlocks();
+
         yield return StartCoroutine(ExploreAllNodes());
         if (state == State.FinishedSuccess)
         {
