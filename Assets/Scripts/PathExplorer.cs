@@ -6,7 +6,12 @@ using UnityEngine.Assertions;
 
 public class PathExplorer : MonoBehaviour {
 
+    [SerializeField] [Range(0.05f, 2f)] float iterationDelay  = 0.1f;
+    [SerializeField] int iteration = 0;
     [SerializeField] Block startBlock, endBlock;
+
+    enum State { NotRun, Running, Finished }; // todo detect success vs failure
+    [SerializeField] State state = State.NotRun;
 
     Dictionary<Vector2Int, Block> blocks = new Dictionary<Vector2Int, Block>();
     Queue<Block> queue = new Queue<Block>();
@@ -42,35 +47,44 @@ public class PathExplorer : MonoBehaviour {
     private IEnumerator ExploreAllNodes()
     {
         queue.Enqueue(startBlock);
+        state = State.Running;
 
-        Block blockToSearchFrom; // syntatic fluff
         while (queue.Count > 0)
         {
-            blockToSearchFrom = queue.Dequeue();
-            if (blockToSearchFrom == endBlock) { break; }
-            SearchFromBlock(blockToSearchFrom);
-            yield return new WaitForSeconds(0.5f);
+            var blockToSearchFrom = queue.Dequeue();
+            blockToSearchFrom.SetExplored();
+            SearchFromPosition(blockToSearchFrom);
+            yield return new WaitForSeconds(iterationDelay);
         }
-        yield return null;
+        state = State.Finished;
+        yield return new WaitForEndOfFrame();
     }
 
-    private void SearchFromBlock(Block blockToSearchFrom)
+    private void SearchFromPosition(Block searchBlock)
     {
-        print("Searching from " + blockToSearchFrom.GetGridPos());
+        Vector2Int searchCenter = searchBlock.GetGridPos();
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int probeCoordinates = blockToSearchFrom.GetGridPos() + direction;
-            EnqueueNodeInDirection(probeCoordinates);
+            Vector2Int positionToCheck = searchCenter + direction;
+            if (IsUnexploredBlockAt(positionToCheck))
+            {
+                queue.Enqueue(blocks[positionToCheck]);
+            }
         }
     }
 
-    private void EnqueueNodeInDirection(Vector2Int probeCoordinates)
+    private bool IsUnexploredBlockAt(Vector2Int targetPosition)
     {
-        bool isUnexploredBlock = blocks.ContainsKey(probeCoordinates) && !blocks[probeCoordinates].IsExplored();
-        if (isUnexploredBlock)
+        try
         {
-            blocks[probeCoordinates].SetExplored();
-            queue.Enqueue(blocks[probeCoordinates]);
+            iteration++;
+            bool isBlockAtTarget = blocks.ContainsKey(targetPosition);
+            bool isTargetExplored = blocks[targetPosition].IsExplored();
+            return isBlockAtTarget && !isTargetExplored;
+        }
+        catch
+        {
+            return false;
         }
     }
 }
