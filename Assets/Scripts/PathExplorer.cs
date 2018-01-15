@@ -8,9 +8,8 @@ public class PathExplorer : MonoBehaviour {
 
     [SerializeField] Block startBlock, endBlock;
 
-    //UnityEngine.Object[] blocks;
-    //HashSet<Vector2Int> blockCoordinates = new HashSet<Vector2Int>();
     Dictionary<Vector2Int, Block> blocks = new Dictionary<Vector2Int, Block>();
+    Queue<Block> queue = new Queue<Block>();
 
     Vector2Int[] directions = {
         Vector2Int.up,
@@ -42,11 +41,22 @@ public class PathExplorer : MonoBehaviour {
    
     private void ExploreAllNodes()
     {
-        Vector2Int currentNode = startBlock.GetGridPos();
-        print("Starting with node:" + currentNode);
+        queue.Enqueue(startBlock);
+
+        Block blockToSearchFrom;
+        do
+        {
+            blockToSearchFrom = queue.Dequeue();
+            SearchFromBlock(blockToSearchFrom);
+        }
+        while (blockToSearchFrom != endBlock);
+    }
+
+    private void SearchFromBlock(Block blockToSearchFrom)
+    {
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int probeCoordinates = currentNode + direction;
+            Vector2Int probeCoordinates = blockToSearchFrom.GetGridPos() + direction;
             EnqueueNodeInDirection(probeCoordinates);
         }
     }
@@ -55,12 +65,12 @@ public class PathExplorer : MonoBehaviour {
     {
         if (blocks.ContainsKey(probeCoordinates))
         {
-            print("Found block at " + probeCoordinates);
             blocks[probeCoordinates].SetExplored();
+            queue.Enqueue(blocks[probeCoordinates]);
         }
         else
         {
-            print("Nothing at " + probeCoordinates); 
+            // do nothing
         }
     }
 }
