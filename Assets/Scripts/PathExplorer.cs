@@ -24,7 +24,7 @@ public class PathExplorer : MonoBehaviour {
         Debug.Assert(startBlock, "No start block found");
         Debug.Assert(endBlock, "No end block found");
         LoadBlocks();
-        ExploreAllNodes();
+        StartCoroutine(ExploreAllNodes());
     }
 
     private void LoadBlocks()
@@ -39,21 +39,24 @@ public class PathExplorer : MonoBehaviour {
         }
     }
    
-    private void ExploreAllNodes()
+    private IEnumerator ExploreAllNodes()
     {
         queue.Enqueue(startBlock);
 
-        Block blockToSearchFrom;
-        do
+        Block blockToSearchFrom; // syntatic fluff
+        while (queue.Count > 0)
         {
             blockToSearchFrom = queue.Dequeue();
+            if (blockToSearchFrom == endBlock) { break; }
             SearchFromBlock(blockToSearchFrom);
+            yield return new WaitForSeconds(0.5f);
         }
-        while (blockToSearchFrom != endBlock);
+        yield return null;
     }
 
     private void SearchFromBlock(Block blockToSearchFrom)
     {
+        print("Searching from " + blockToSearchFrom.GetGridPos());
         foreach (Vector2Int direction in directions)
         {
             Vector2Int probeCoordinates = blockToSearchFrom.GetGridPos() + direction;
@@ -63,14 +66,11 @@ public class PathExplorer : MonoBehaviour {
 
     private void EnqueueNodeInDirection(Vector2Int probeCoordinates)
     {
-        if (blocks.ContainsKey(probeCoordinates))
+        bool isUnexploredBlock = blocks.ContainsKey(probeCoordinates) && !blocks[probeCoordinates].IsExplored();
+        if (isUnexploredBlock)
         {
             blocks[probeCoordinates].SetExplored();
             queue.Enqueue(blocks[probeCoordinates]);
-        }
-        else
-        {
-            // do nothing
         }
     }
 }
