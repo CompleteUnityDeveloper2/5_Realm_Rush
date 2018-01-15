@@ -70,35 +70,41 @@ public class PathExplorer : MonoBehaviour {
         Vector2Int searchCenter = searchBlock.GetGridPos();
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int positionToCheck = searchCenter + direction;
-            QueueToSearchNextIfValidBlockAt(positionToCheck);
+            Vector2Int searchPosition = searchCenter + direction;
+            if (IsNeighbourUnexplored(searchPosition))
+            {
+                Block newBlockToSearch = blocks[searchPosition];
+                queue.Enqueue(newBlockToSearch);
+                searchBlock.SetExplored();
+                newBlockToSearch.SetExploredFrom(searchBlock);
+            }
         }
     }
 
-    private void QueueToSearchNextIfValidBlockAt(Vector2Int targetPosition)
+    private bool IsNeighbourUnexplored(Vector2Int searchPosition)
     {
         Block targetBlock;
         try
         {
-            targetBlock = blocks[targetPosition];
+            targetBlock = blocks[searchPosition];
         }
         catch
         {
-            return;
+            return false;
         }
         finally
         {
             iteration++;
         }
 
-        bool isBlockAtTarget = blocks.ContainsKey(targetPosition);
+        bool isBlockAtTarget = blocks.ContainsKey(searchPosition);
         bool targetIsUnexplored = !targetBlock.IsExplored();
         bool targetIsNotBlocked = !targetBlock.IsBlocked();
 
         if (isBlockAtTarget && targetIsUnexplored && targetIsNotBlocked)
         {
-            queue.Enqueue(targetBlock);
-            blocks[targetPosition].SetExplored();
+            return true;
         }
+        return false;
     }
 }

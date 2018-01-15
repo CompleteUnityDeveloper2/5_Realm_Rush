@@ -9,6 +9,7 @@ public class Block : MonoBehaviour {
     [SerializeField] Vector2Int gridPos;
     [SerializeField] bool blocked = false;
     [SerializeField] bool explored = false;
+    [SerializeField] Block exploredFrom;
 
 	// Use this for initialization
 	void Awake () { // Awake so initialised ready for path explorer
@@ -29,6 +30,11 @@ public class Block : MonoBehaviour {
     public void SetExplored()
     {
         explored = true;
+    }
+
+    public void SetExploredFrom(Block fromBlock)
+    {
+        exploredFrom = fromBlock;
     }
 
     public bool IsExplored()
