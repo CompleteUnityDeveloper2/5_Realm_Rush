@@ -37,6 +37,11 @@ public class Block : MonoBehaviour {
         exploredFrom = fromBlock;
     }
 
+    public Block GetExploredFrom()
+    {
+        return exploredFrom;
+    }
+
     public bool IsExplored()
     {
         return explored;

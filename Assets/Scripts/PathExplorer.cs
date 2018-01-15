@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class PathExplorer : MonoBehaviour {
+public class PathExplorer : MonoBehaviour
+{
 
-    [SerializeField] [Range(0f, 2f)] float iterationDelay  = 0.1f;
+    [SerializeField] [Range(0f, 2f)] float iterationDelay = 0.1f;
     [SerializeField] int iteration = 0;
     [SerializeField] Block startBlock, endBlock;
 
-    enum State { NotRun, Running, Finished }; // todo detect success vs failure
+    enum State { NotRun, Running, FinishedSuccess, Failed }; // todo detect success vs failure
     [SerializeField] State state = State.NotRun;
 
     Dictionary<Vector2Int, Block> blocks = new Dictionary<Vector2Int, Block>();
     Queue<Block> queue = new Queue<Block>();
+    List<Block> path = new List<Block>();
 
     Vector2Int[] directions = {
         Vector2Int.up,
@@ -23,13 +25,21 @@ public class PathExplorer : MonoBehaviour {
         Vector2Int.right
     };
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    IEnumerator Start()
     {
         Debug.Assert(startBlock, "No start block found");
         Debug.Assert(endBlock, "No end block found");
         LoadBlocks();
-        StartCoroutine(ExploreAllNodes());
+        yield return StartCoroutine(ExploreAllNodes());
+        if (state == State.FinishedSuccess)
+        {
+            CreatePath();
+        }
+        foreach (Block block in path)
+        {
+            print(block.GetGridPos()); 
+        }
     }
 
     private void LoadBlocks()
@@ -55,14 +65,32 @@ public class PathExplorer : MonoBehaviour {
 
             if (blockToSearchFrom == endBlock)
             {
+                state = State.FinishedSuccess;
+                endBlock.SetExplored();
                 break;
             }
 
             SearchFromPosition(blockToSearchFrom);
             yield return new WaitForSeconds(iterationDelay);
         }
-        state = State.Finished;
+        if (state != State.FinishedSuccess) { state = State.Failed; }
         yield return new WaitForEndOfFrame();
+    }
+
+    private void CreatePath()
+    {
+        path.Add(endBlock);
+
+        Block previousBlock = endBlock.GetExploredFrom();
+        while (previousBlock != startBlock)
+        {
+            path.Add(previousBlock);
+            previousBlock = previousBlock.GetExploredFrom();
+        }
+
+        path.Add(startBlock); 
+
+        path.Reverse();
     }
 
     private void SearchFromPosition(Block searchBlock)
