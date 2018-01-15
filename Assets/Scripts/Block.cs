@@ -11,7 +11,7 @@ public class Block : MonoBehaviour {
     [SerializeField] bool explored = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () { // Awake so initialised ready for path explorer
         gridPos.x = Mathf.RoundToInt(transform.position.x / 10);
         gridPos.y = Mathf.RoundToInt(transform.position.z / 10);
 	}
