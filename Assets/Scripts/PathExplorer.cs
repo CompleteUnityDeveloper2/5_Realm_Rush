@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 
 public class PathExplorer : MonoBehaviour {
 
-    [SerializeField] [Range(0.05f, 2f)] float iterationDelay  = 0.1f;
+    [SerializeField] [Range(0f, 2f)] float iterationDelay  = 0.1f;
     [SerializeField] int iteration = 0;
     [SerializeField] Block startBlock, endBlock;
 
@@ -52,6 +52,12 @@ public class PathExplorer : MonoBehaviour {
         while (queue.Count > 0)
         {
             var blockToSearchFrom = queue.Dequeue();
+
+            if (blockToSearchFrom == endBlock)
+            {
+                break;
+            }
+
             SearchFromPosition(blockToSearchFrom);
             yield return new WaitForSeconds(iterationDelay);
         }
