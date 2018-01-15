@@ -9,12 +9,14 @@ public class PathExplorer : MonoBehaviour {
     [SerializeField] Block startBlock, endBlock;
 
     UnityEngine.Object[] blocks;
-    HashSet<Vector2Int> nodes = new HashSet<Vector2Int>();
+    HashSet<Vector2Int> blockCoordinates = new HashSet<Vector2Int>();
+    Dictionary<Vector2Int, Block> blocksDictTemp;
+
     Vector2Int[] directions = {
-        new Vector2Int( 0,  1), // up
-        new Vector2Int( 1,  0), // right
-        new Vector2Int( 0, -1), // down
-        new Vector2Int(-1,  0), // down
+        Vector2Int.up,
+        Vector2Int.down,
+        Vector2Int.left,
+        Vector2Int.right
     };
 
 	// Use this for initialization
@@ -32,9 +34,9 @@ public class PathExplorer : MonoBehaviour {
         foreach (Block block in blocks)
         {
             Vector2Int gridPos = block.GetGridPos();
-            bool positionOccupied = nodes.Contains(gridPos);
+            bool positionOccupied = blockCoordinates.Contains(gridPos);
             Debug.Assert(!positionOccupied, "Overlapping block " + block);
-            nodes.Add(gridPos);
+            blockCoordinates.Add(gridPos);
         }
     }
    
@@ -51,9 +53,10 @@ public class PathExplorer : MonoBehaviour {
 
     private void EnqueueNodeInDirection(Vector2Int probeCoordinates)
     {
-        if (nodes.Contains(probeCoordinates))
+        if (blockCoordinates.Contains(probeCoordinates))
         {
             print("Found block at " + probeCoordinates);
+
         }
         else
         {
