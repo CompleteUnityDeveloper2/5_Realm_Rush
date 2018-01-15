@@ -26,8 +26,9 @@ public class PathExplorer : MonoBehaviour
     };
 
     // Use this for initialization
-    IEnumerator Start()
+    public IEnumerator FindPath()
     {
+        Debug.Log("Finding path...");
         Debug.Assert(startBlock, "No start block found");
         Debug.Assert(endBlock, "No end block found");
         LoadBlocks();
@@ -38,6 +39,18 @@ public class PathExplorer : MonoBehaviour
             CreatePath();
         }
         SetBlockPathFlags();
+    }
+
+    public List<Block> GetPath()
+    {
+        if (state == State.FinishedSuccess)
+        {
+            return path;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     private void LoadBlocks()
@@ -107,15 +120,20 @@ public class PathExplorer : MonoBehaviour
             Vector2Int searchPosition = searchCenter + direction;
             if (IsNeighbourUnexplored(searchPosition))
             {
-                Block blockToQueue = blocks[searchPosition];
-                if (!queue.Contains(blockToQueue)) // prevenet duplicates
-                {
-                    queue.Enqueue(blockToQueue);
-                }
-                searchBlock.SetExplored();
-                blockToQueue.SetExploredFrom(searchBlock);
+                ProcessNeighbour(searchBlock, searchPosition);
             }
         }
+    }
+
+    private void ProcessNeighbour(Block searchBlock, Vector2Int searchPosition)
+    {
+        Block blockToQueue = blocks[searchPosition];
+        if (!queue.Contains(blockToQueue)) // prevenet duplicates
+        {
+            queue.Enqueue(blockToQueue);
+        }
+        searchBlock.SetExplored();
+        blockToQueue.SetExploredFrom(searchBlock);
     }
 
     private bool IsNeighbourUnexplored(Vector2Int searchPosition)
