@@ -8,9 +8,9 @@ public class PathExplorer : MonoBehaviour {
 
     [SerializeField] Block startBlock, endBlock;
 
-    UnityEngine.Object[] blocks;
-    HashSet<Vector2Int> blockCoordinates = new HashSet<Vector2Int>();
-    Dictionary<Vector2Int, Block> blocksDictTemp;
+    //UnityEngine.Object[] blocks;
+    //HashSet<Vector2Int> blockCoordinates = new HashSet<Vector2Int>();
+    Dictionary<Vector2Int, Block> blocks = new Dictionary<Vector2Int, Block>();
 
     Vector2Int[] directions = {
         Vector2Int.up,
@@ -22,21 +22,21 @@ public class PathExplorer : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        blocks = FindObjectsOfType(typeof(Block));
         Debug.Assert(startBlock, "No start block found");
         Debug.Assert(endBlock, "No end block found");
-        LoadBlocksAsNodes();
+        LoadBlocks();
         ExploreAllNodes();
     }
 
-    private void LoadBlocksAsNodes()
+    private void LoadBlocks()
     {
-        foreach (Block block in blocks)
+        var blockObjects = FindObjectsOfType(typeof(Block));
+        foreach (Block blockObject in blockObjects)
         {
-            Vector2Int gridPos = block.GetGridPos();
-            bool positionOccupied = blockCoordinates.Contains(gridPos);
-            Debug.Assert(!positionOccupied, "Overlapping block " + block);
-            blockCoordinates.Add(gridPos);
+            Vector2Int gridPos = blockObject.GetGridPos();
+            bool positionOccupied = blocks.ContainsKey(gridPos);
+            Debug.Assert(!positionOccupied, "Overlapping block " + blockObject);
+            blocks.Add(gridPos, blockObject);
         }
     }
    
@@ -53,14 +53,14 @@ public class PathExplorer : MonoBehaviour {
 
     private void EnqueueNodeInDirection(Vector2Int probeCoordinates)
     {
-        if (blockCoordinates.Contains(probeCoordinates))
-        {
-            print("Found block at " + probeCoordinates);
+        //if (blockCoordinates.Contains(probeCoordinates))
+        //{
+        //    print("Found block at " + probeCoordinates);
 
-        }
-        else
-        {
-            print("Nothing at " + probeCoordinates); 
-        }
+        //}
+        //else
+        //{
+        //    print("Nothing at " + probeCoordinates); 
+        //}
     }
 }
