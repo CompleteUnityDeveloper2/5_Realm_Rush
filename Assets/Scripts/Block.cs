@@ -9,6 +9,7 @@ public class Block : MonoBehaviour {
     [SerializeField] Vector2Int gridPos;
     [SerializeField] bool blocked = false;
     [SerializeField] bool explored = false;
+    [SerializeField] bool onPath = false;
     [SerializeField] Block exploredFrom;
 
 	// Use this for initialization
@@ -50,5 +51,15 @@ public class Block : MonoBehaviour {
     public bool IsBlocked()
     {
         return blocked;
+    }
+
+    public void SetOnPath()
+    {
+        onPath = true;
+    }
+
+    public bool IsOnPath()
+    {
+        return onPath;
     }
 }

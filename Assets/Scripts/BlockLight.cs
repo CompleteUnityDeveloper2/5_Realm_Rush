@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 [ExecuteInEditMode]
 public class BlockLight : MonoBehaviour {
 
-    [SerializeField] Color unExplored, explored;
+    [SerializeField] Color unExplored, explored, path;
 
     Block block;
     Light blockLight;
@@ -23,7 +23,11 @@ public class BlockLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (block.IsExplored())
+        if (block.IsOnPath())
+        {
+            blockLight.color = path;
+        }
+        else if (block.IsExplored()) // consdier moving these block states to enums to make order independent
         {
             blockLight.color = explored;
         }

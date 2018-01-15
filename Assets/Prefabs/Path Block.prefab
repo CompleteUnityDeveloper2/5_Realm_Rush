@@ -741,6 +741,8 @@ MonoBehaviour:
   gridPos: {x: 1, y: 1}
   blocked: 0
   explored: 0
+  onPath: 0
+  exploredFrom: {fileID: 0}
 --- !u!114 &114772924393454284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -754,3 +756,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unExplored: {r: 0, g: 0, b: 0, a: 0}
   explored: {r: 1, g: 1, b: 1, a: 0}
+  path: {r: 1, g: 0, b: 0, a: 0}

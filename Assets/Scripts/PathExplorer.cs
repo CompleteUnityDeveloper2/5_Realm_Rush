@@ -20,9 +20,9 @@ public class PathExplorer : MonoBehaviour
 
     Vector2Int[] directions = {
         Vector2Int.up,
+        Vector2Int.right,
         Vector2Int.down,
-        Vector2Int.left,
-        Vector2Int.right
+        Vector2Int.left
     };
 
     // Use this for initialization
@@ -36,10 +36,7 @@ public class PathExplorer : MonoBehaviour
         {
             CreatePath();
         }
-        foreach (Block block in path)
-        {
-            print(block.GetGridPos()); 
-        }
+        SetBlockPathFlags();
     }
 
     private void LoadBlocks()
@@ -93,6 +90,14 @@ public class PathExplorer : MonoBehaviour
         path.Reverse();
     }
 
+    private void SetBlockPathFlags()
+    {
+        foreach (Block block in path)
+        {
+            block.SetOnPath();
+        }
+    }
+
     private void SearchFromPosition(Block searchBlock)
     {
         Vector2Int searchCenter = searchBlock.GetGridPos();
@@ -101,10 +106,10 @@ public class PathExplorer : MonoBehaviour
             Vector2Int searchPosition = searchCenter + direction;
             if (IsNeighbourUnexplored(searchPosition))
             {
-                Block newBlockToSearch = blocks[searchPosition];
-                queue.Enqueue(newBlockToSearch);
+                Block blockToQueue = blocks[searchPosition];
+                queue.Enqueue(blockToQueue);
                 searchBlock.SetExplored();
-                newBlockToSearch.SetExploredFrom(searchBlock);
+                blockToQueue.SetExploredFrom(searchBlock);
             }
         }
     }
@@ -126,10 +131,10 @@ public class PathExplorer : MonoBehaviour
         }
 
         bool isBlockAtTarget = blocks.ContainsKey(searchPosition);
-        bool targetIsUnexplored = !targetBlock.IsExplored();
-        bool targetIsNotBlocked = !targetBlock.IsBlocked();
+        bool targetIsExplored = targetBlock.IsExplored();
+        bool targetIsBlocked = targetBlock.IsBlocked();
 
-        if (isBlockAtTarget && targetIsUnexplored && targetIsNotBlocked)
+        if (isBlockAtTarget && !targetIsExplored && !targetIsBlocked)
         {
             return true;
         }
