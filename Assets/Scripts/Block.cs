@@ -35,4 +35,9 @@ public class Block : MonoBehaviour {
     {
         return explored;
     }
+
+    public bool IsBlocked()
+    {
+        return blocked;
+    }
 }

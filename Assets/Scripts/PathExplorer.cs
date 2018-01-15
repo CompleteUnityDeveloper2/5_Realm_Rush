@@ -52,7 +52,6 @@ public class PathExplorer : MonoBehaviour {
         while (queue.Count > 0)
         {
             var blockToSearchFrom = queue.Dequeue();
-            blockToSearchFrom.SetExplored();
             SearchFromPosition(blockToSearchFrom);
             yield return new WaitForSeconds(iterationDelay);
         }
@@ -66,25 +65,34 @@ public class PathExplorer : MonoBehaviour {
         foreach (Vector2Int direction in directions)
         {
             Vector2Int positionToCheck = searchCenter + direction;
-            if (IsUnexploredBlockAt(positionToCheck))
-            {
-                queue.Enqueue(blocks[positionToCheck]);
-            }
+            QueueToSearchNextIfValidBlockAt(positionToCheck);
         }
     }
 
-    private bool IsUnexploredBlockAt(Vector2Int targetPosition)
+    private void QueueToSearchNextIfValidBlockAt(Vector2Int targetPosition)
     {
+        Block targetBlock;
         try
         {
-            iteration++;
-            bool isBlockAtTarget = blocks.ContainsKey(targetPosition);
-            bool isTargetExplored = blocks[targetPosition].IsExplored();
-            return isBlockAtTarget && !isTargetExplored;
+            targetBlock = blocks[targetPosition];
         }
         catch
         {
-            return false;
+            return;
+        }
+        finally
+        {
+            iteration++;
+        }
+
+        bool isBlockAtTarget = blocks.ContainsKey(targetPosition);
+        bool targetIsUnexplored = !targetBlock.IsExplored();
+        bool targetIsNotBlocked = !targetBlock.IsBlocked();
+
+        if (isBlockAtTarget && targetIsUnexplored && targetIsNotBlocked)
+        {
+            queue.Enqueue(targetBlock);
+            blocks[targetPosition].SetExplored();
         }
     }
 }
