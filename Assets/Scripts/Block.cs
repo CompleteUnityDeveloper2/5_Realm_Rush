@@ -26,6 +26,11 @@ public class Block : MonoBehaviour {
         return gridPos;
     }
 
+    public void SetExplored()
+    {
+        explored = true;
+    }
+
     public bool IsExplored()
     {
         return explored;

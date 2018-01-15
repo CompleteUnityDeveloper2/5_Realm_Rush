@@ -53,14 +53,14 @@ public class PathExplorer : MonoBehaviour {
 
     private void EnqueueNodeInDirection(Vector2Int probeCoordinates)
     {
-        //if (blockCoordinates.Contains(probeCoordinates))
-        //{
-        //    print("Found block at " + probeCoordinates);
-
-        //}
-        //else
-        //{
-        //    print("Nothing at " + probeCoordinates); 
-        //}
+        if (blocks.ContainsKey(probeCoordinates))
+        {
+            print("Found block at " + probeCoordinates);
+            blocks[probeCoordinates].SetExplored();
+        }
+        else
+        {
+            print("Nothing at " + probeCoordinates); 
+        }
     }
 }
