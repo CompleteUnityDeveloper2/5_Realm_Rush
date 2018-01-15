@@ -269,7 +269,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776290644336158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -30}
+  m_LocalPosition: {x: -10, y: 0, z: -10}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4513011518593842}
@@ -309,7 +309,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 12e89a953d06b4161a88f1141a43a664, type: 2}
+  - {fileID: 2100000, guid: 2c2227e216dc24271b4a8ec347e7c54e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -666,7 +666,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408157417707290}
-  m_Text: 1, 1
+  m_Text: -1, -1
   m_OffsetZ: -0.01
   m_CharacterSize: 0.15
   m_LineSpacing: 1
@@ -689,9 +689,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_Intensity: 5
-  m_Range: 100
+  m_Color: {r: 0.16896552, g: 0.16896552, b: 0.16896552, a: 0}
+  m_Intensity: 10
+  m_Range: 120
   m_SpotAngle: 10
   m_CookieSize: 10
   m_Shadows:
@@ -709,9 +709,9 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d443568353f437d8ca2dd4b1387926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridPos: {x: 1, y: 1}
+  gridPos: {x: 1, y: 0}
   blocked: 0
   explored: 0
   onPath: 0
@@ -754,6 +754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef50ed6cb581c4041b9e56cc5940e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unExplored: {r: 0, g: 0, b: 0, a: 0}
-  explored: {r: 1, g: 1, b: 1, a: 0}
+  unExplored: {r: 0.16896552, g: 0.16896552, b: 0.16896552, a: 0}
+  explored: {r: 0.78275865, g: 0.78275865, b: 0.78275865, a: 0}
   path: {r: 1, g: 0, b: 0, a: 0}

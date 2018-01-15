@@ -107,7 +107,10 @@ public class PathExplorer : MonoBehaviour
             if (IsNeighbourUnexplored(searchPosition))
             {
                 Block blockToQueue = blocks[searchPosition];
-                queue.Enqueue(blockToQueue);
+                if (!queue.Contains(blockToQueue)) // prevenet duplicates
+                {
+                    queue.Enqueue(blockToQueue);
+                }
                 searchBlock.SetExplored();
                 blockToQueue.SetExploredFrom(searchBlock);
             }
