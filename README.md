@@ -5,7 +5,7 @@ This is the long-awaited sequel to the Complete Unity Developer - one of the mos
 You're welcome to download, fork or do whatever else legal with all the files! The real value is in our huge, high-quality online tutorials that accompany this repo.
 
 ## In This Section
-Deep dive into 2D UI, basic pathfinding, and more(REF: RR_CU2)
+This is a 3D isometric tech demo designed to teach the fundamentals of AI pathfinding, namely Breadth First Search or BFS. (Section REF: RR_CU2)
 
 ## How To Build / Compile
 This is a Unity project. If you're familiar with source control, then "clone this repo". Otherwise download the contents, and navigate to `Assets > Levels` then open any `.unity` file.
@@ -15,9 +15,16 @@ This branch is the course branch, each commit corresponds to a lecture in the co
 ## Lecture List
 Here are the lectures of the course for this section...
 
-Coming Soon
+### 1 Welcome To Section 5 ###
 
+**In this video (objectives)…**
+
+1. How this project fits into the course.
+2. A peek at what we'll be building.
+3. Why not use Unity's built-in pathfinding.
+4. You'll learn C# co-routines, `Queue`, `Dictionary`.
+5. Order independent execution, editor scripts and more in Unity.
 
 **After watching (learning outcomes)…**
 
-Create a basic tower defence game in Unity.
+Explain to a fellow student roughly what we're building, and why this is awesome stuff to know.
