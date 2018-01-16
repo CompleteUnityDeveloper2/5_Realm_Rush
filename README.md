@@ -28,3 +28,15 @@ Here are the lectures of the course for this section...
 **After watching (learning outcomes)…**
 
 Explain to a fellow student roughly what we're building, and why this is awesome stuff to know.
+
+### 2 Limitations Of Unity Pathfinding ###
+
+**In this video (objectives)…**
+
+1. A quick overview of Unity's NavMesh.
+2. How our system compares.
+
+
+**After watching (learning outcomes)…**
+
+Explain why we are creating pathfinding from scratch.
