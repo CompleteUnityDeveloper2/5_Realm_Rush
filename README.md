@@ -40,3 +40,17 @@ Explain to a fellow student roughly what we're building, and why this is awesome
 **After watching (learning outcomes)…**
 
 Explain why we are creating pathfinding from scratch.
+
+
+### 3 Z-Fighting And Quads ###
+
+**In this video (objectives)…**
+
+1. Demonstrate z-fighting problem.
+2. Show quads as building blocks.
+3. Demonstrate back face culling.
+4. Create labelled block prefab.
+
+**After watching (learning outcomes)…**
+
+Build simple objects from cubes, and describe both back face culling, and z-fighting.
