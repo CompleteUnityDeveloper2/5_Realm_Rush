@@ -54,3 +54,19 @@ Explain why we are creating pathfinding from scratch.
 **After watching (learning outcomes)…**
 
 Build simple objects from cubes, and describe both back face culling, and z-fighting.
+
+
+### 4 [ExecuteInEditMode] Attribute ###
+
+**In this video (objectives)…**
+
+1. Why we want snapping in our world.
+2. How to use Unity's snap feature.
+3. The limitations and why we write our own.
+4. Introducing `[ExecuteInEditMode]` attribute.
+5. Introducing `[Range()]` attribute.
+
+
+**After watching (learning outcomes)…**
+
+Enforce snapping in the Unity editor using an "editor script".
