@@ -56,7 +56,7 @@ Explain why we are creating pathfinding from scratch.
 Build simple objects from cubes, and describe both back face culling, and z-fighting.
 
 
-### 4 [ExecuteInEditMode] Attribute ###
+### 4 ExecuteInEditMode Attribute ###
 
 **In this video (objectives)…**
 
@@ -70,3 +70,18 @@ Build simple objects from cubes, and describe both back face culling, and z-figh
 **After watching (learning outcomes)…**
 
 Enforce snapping in the Unity editor using an "editor script".
+
+
+### 5 Using Text Mesh For Labels ###
+
+**In this video (objectives)…**
+
+1. How to use Text Mesh in Unity
+2. Text Mesh vs UI Text
+3. Using the `[SelectionBase]` attribute
+4. Using 'GetComponentInChildren()'
+
+
+**After watching (learning outcomes)…**
+
+Use Text Mesh to label objects in the world for debug.
