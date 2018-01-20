@@ -85,3 +85,17 @@ Enforce snapping in the Unity editor using an "editor script".
 **After watching (learning outcomes)…**
 
 Use Text Mesh to label objects in the world for debug.
+
+
+### 6 C-Sharp Lists For Custom Path ###
+
+**In this video (objectives)…**
+
+1. The `List<>` syntax
+2. Lists vs arrays
+3. Creating a custom waypoint path.
+
+
+**After watching (learning outcomes)…**
+
+Use a simple list in C#.
