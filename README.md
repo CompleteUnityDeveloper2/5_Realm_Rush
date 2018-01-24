@@ -99,3 +99,20 @@ Use Text Mesh to label objects in the world for debug.
 **After watching (learning outcomes)…**
 
 Use a simple list in C#.
+
+
+### 7 Introducing Coroutines ###
+
+**In this video (objectives)…**
+
+1. How loops stall of block our code
+2. Use 'IEnumerator' as a return type
+3. Using 'StartCoroutine()'
+4. How to 'yield' execution
+5. Returning a yield instruction
+6. Using 'WaitForSeconds()'
+
+
+**After watching (learning outcomes)…**
+
+Use a basic co-routing to make a time-based sequence appear to run in parallel to the rest of your game code.
