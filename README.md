@@ -116,3 +116,17 @@ Use a simple list in C#.
 **After watching (learning outcomes)…**
 
 Use a basic co-routing to make a time-based sequence appear to run in parallel to the rest of your game code.
+
+
+### 8 Types Of Pathfinding ###
+
+**In this video (objectives)…**
+
+1. Look at Breadth First Search (BFS)
+2. Compared to Dijkstra's algorithm and A*
+3. Why A-Star isn't always the best best
+
+
+**After watching (learning outcomes)…**
+
+Discuss the basic differences between three pathfinding algorithms.
