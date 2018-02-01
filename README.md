@@ -130,3 +130,16 @@ Use a basic co-routing to make a time-based sequence appear to run in parallel t
 **After watching (learning outcomes)…**
 
 Discuss the basic differences between three pathfinding algorithms.
+
+
+### 9 Instance Variables And Constants ###
+
+**In this video (objectives)…**
+
+1. Used `const` for `gridSize` global data
+2. Discussed dependencies
+3. Refactored our code.
+
+**After watching (learning outcomes)…**
+
+Move information from one class to another, and use `const` where appropriate.
