@@ -143,3 +143,18 @@ Discuss the basic differences between three pathfinding algorithms.
 **After watching (learning outcomes)…**
 
 Move information from one class to another, and use `const` where appropriate.
+
+
+### 10 The Dictionary Data Structure ###
+
+**In this video (objectives)…**
+
+1. Setup our first C# dictionary for our grid
+2. Syntax: `Dictionary<Vector2Int, Waypoint> grid`
+3. Use `grid.Add()` to add elements
+4. Use `grid.ContainsKey(gridPos))` to detect duplicates.
+
+
+**After watching (learning outcomes)…**
+
+Recognise (but not necessarily use, basic C# dictionaries.)

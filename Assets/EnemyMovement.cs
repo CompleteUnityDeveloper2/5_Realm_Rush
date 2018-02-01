@@ -9,8 +9,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(FollowPath());
-        print("Hey I'm back at Start");
+
 	}
 
     IEnumerator FollowPath()
