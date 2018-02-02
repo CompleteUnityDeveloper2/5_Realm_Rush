@@ -132,6 +132,11 @@ Use a basic co-routing to make a time-based sequence appear to run in parallel t
 Discuss the basic differences between three pathfinding algorithms.
 
 
+### 8b The Path Ahead ###
+
+Ben explains what to expect in the next two videos.
+
+
 ### 9 Instance Variables And Constants ###
 
 **In this video (objectives)…**
@@ -157,4 +162,4 @@ Move information from one class to another, and use `const` where appropriate.
 
 **After watching (learning outcomes)…**
 
-Recognise (but not necessarily use, basic C# dictionaries.)
+Recognise (but not necessarily use), basic C# dictionaries.
