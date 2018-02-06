@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7128783dc19446b6b4d001ccadde148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startWaypoint: {fileID: 1151422760}
+  endWaypoint: {fileID: 561277602}
 --- !u!1 &378084292
 GameObject:
   m_ObjectHideFlags: 0

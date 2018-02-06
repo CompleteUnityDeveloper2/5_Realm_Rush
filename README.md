@@ -163,3 +163,17 @@ Move information from one class to another, and use `const` where appropriate.
 **After watching (learning outcomes)…**
 
 Recognise (but not necessarily use), basic C# dictionaries.
+
+**In this video (objectives)…**
+
+
+### 11 Finding Game Objects By Name ###
+
+1. Discuss how to find a child object from a script
+2. Use `transform.Find()` to find by name
+3. Color our blocks with `waypoing.SetTopColor()`
+
+
+**After watching (learning outcomes)…**
+
+Find other game objects by their name.
