@@ -171,9 +171,22 @@ Recognise (but not necessarily use), basic C# dictionaries.
 
 1. Discuss how to find a child object from a script
 2. Use `transform.Find()` to find by name
-3. Color our blocks with `waypoing.SetTopColor()`
+3. Color our blocks with `waypoint.SetTopColor()`
 
 
 **After watching (learning outcomes)…**
 
 Find other game objects by their name.
+
+
+### 12 Explore Thy Neighbour ###
+
+**In this video (objectives)…**
+
+2. See how `+` can join strings, and add vectors.
+3. Use `try {} catch {}` to catch errors.
+
+
+**After watching (learning outcomes)…**
+
+Specify a list of allowable directions and "explore" in them.
