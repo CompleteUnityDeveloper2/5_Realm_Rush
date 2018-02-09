@@ -220,3 +220,17 @@ Manually perform Breadth First Search, and find the shortest path.
 **After watching (learning outcomes)…**
 
 Add and remove items from a C# queue.
+
+
+### 15 Running Manual Tests ###
+
+**In this video (objectives)…**
+
+1. Use our `isRunning` state
+2. Log out what we're queueing
+3. Check pathfinding across whole grid.
+
+
+**After watching (learning outcomes)…**
+
+Use systematic manual testing to help write software.
