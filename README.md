@@ -204,3 +204,19 @@ Specify a list of allowable directions and "explore" in them.
 **After watching (learning outcomes)…**
 
 Manually perform Breadth First Search, and find the shortest path.
+
+
+### 14 Introducing C# Queues ###
+
+**In this video (objectives)…**
+
+1. Define FIFO vs LIFO queues
+2. Using `Queue<Type> queue` syntax
+3. Using `Queue.Enqueue()`
+4. Using `Queue.Dequeue()`
+5. Detecting when end waypoint is found.
+
+
+**After watching (learning outcomes)…**
+
+Add and remove items from a C# queue.
