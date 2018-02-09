@@ -190,3 +190,17 @@ Find other game objects by their name.
 **After watching (learning outcomes)…**
 
 Specify a list of allowable directions and "explore" in them.
+
+
+### 13 Breadth First Search Algorithm ###
+
+**In this video (objectives)…**
+
+1. Look at the Wikipedia article on BFS
+2. Demonstrate simpler pseudocode for BFS
+3. Walk through BFS step-by-step.
+
+
+**After watching (learning outcomes)…**
+
+Manually perform Breadth First Search, and find the shortest path.
