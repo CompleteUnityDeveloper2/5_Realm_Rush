@@ -250,3 +250,17 @@ Use systematic manual testing to help write software.
 **After watching (learning outcomes)…**
 
 Explain why you would sometimes use `public`
+
+
+### 17 Reversing A List ###
+
+**In this video (objectives)…**
+
+1. Create our list
+2. Adjust our architecture
+3. Hand over to Rick
+
+
+**After watching (learning outcomes)…**
+
+Manipulate C# lists, and create getter methods.
