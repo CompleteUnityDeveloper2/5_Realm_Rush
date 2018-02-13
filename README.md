@@ -234,3 +234,19 @@ Add and remove items from a C# queue.
 **After watching (learning outcomes)…**
 
 Use systematic manual testing to help write software.
+
+
+### 16 A Breadcrumb Trail ###
+
+**In this video (objectives)…**
+
+1. Thanks to Eddie for spotting an improvement
+2. Using `queue.Contains(neighbour)` to prevent duplicates
+3. Improving our color architecture
+4. Justifying the use of `public` vs `[SerializeField]`
+5. Leave a breadcrumb.
+
+
+**After watching (learning outcomes)…**
+
+Explain why you would sometimes use `public`
