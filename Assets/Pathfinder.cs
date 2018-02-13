@@ -34,7 +34,7 @@ public class Pathfinder : MonoBehaviour {
         while(queue.Count > 0 && isRunning)
         {
             var searchCenter = queue.Dequeue();
-            print("Searching from: " + searchCenter); // todo remove log
+           // print("Searching from: " + searchCenter); // todo remove log
             HaltIfEndFound(searchCenter);
             ExploreNeighbours(searchCenter);
             searchCenter.isExplored = true;
@@ -82,7 +82,7 @@ public class Pathfinder : MonoBehaviour {
         {
             neighbour.SetTopColor(Color.blue); // todo move later
             queue.Enqueue(neighbour);
-            print("Queueing " + neighbour);
+//            print("Queueing " + neighbour);
         }
     }
 
