@@ -5,21 +5,13 @@ using UnityEngine;
 public class Tower : MonoBehaviour {
 
     [SerializeField] Transform objectToPan;
-    [SerializeField] EnemyMovement targetEnemy;
+    [SerializeField] Enemy targetEnemy;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        AimAtWorldCoordinates(targetEnemy.transform.forward);
-	}
-
-    void AimAtWorldCoordinates(Vector3 coordinates)
+    // Update is called once per frame
+    void Update()
     {
-        Vector3 targetDir = targetEnemy.transform.position - transform.position;
-        print(Vector3.Angle(targetDir, transform.forward));
+        float aimHeight = targetEnemy.GetHeadHeight();
+        Vector3 aimOffset = new Vector3(0f, aimHeight, 0f);
+        objectToPan.LookAt(targetEnemy.transform.position + aimOffset);
     }
 }
