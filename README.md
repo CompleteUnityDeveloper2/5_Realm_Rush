@@ -264,3 +264,17 @@ Explain why you would sometimes use `public`
 **After watching (learning outcomes)…**
 
 Manipulate C# lists, and create getter methods.
+
+
+### 17 Adding Production Assets ###
+
+**In this video (objectives)…**
+
+1. Import art assets
+2. Reconstruct our pathfinding block with the new look
+3. Update the rest of our scene with a new look
+
+
+**After watching (learning outcomes)…**
+
+Import, implement and tune art assets for your scene.
