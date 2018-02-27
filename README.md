@@ -266,7 +266,7 @@ Explain why you would sometimes use `public`
 Manipulate C# lists, and create getter methods.
 
 
-### 17 Adding Production Assets ###
+### 18 Adding Production Assets ###
 
 **In this video (objectives)…**
 
@@ -278,3 +278,17 @@ Manipulate C# lists, and create getter methods.
 **After watching (learning outcomes)…**
 
 Import, implement and tune art assets for your scene.
+
+
+### 19 Tower LookAt Enemy ###
+
+**In this video (objectives)…**
+
+1. Construct a tower with base and top parts.
+2. Use LookAt to move the top of the tower to look at a moving enemy.
+
+
+**After watching (learning outcomes)…**
+
+Use LookAt statement to control the rotation of a tower.
+
