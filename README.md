@@ -292,3 +292,17 @@ Import, implement and tune art assets for your scene.
 
 Use LookAt statement to control the rotation of a tower.
 
+
+### 20 MagicaVoxel Bonus Content ###
+
+**In this video (objectives)…**
+
+1. Where to find additional content for creating MagicaVoxel assets.
+2. What content we will cover in our MagicaVoxel community course.
+
+
+**After watching (learning outcomes)…**
+
+Aware of the MagicaVoxel Bonus Content.
+
+
