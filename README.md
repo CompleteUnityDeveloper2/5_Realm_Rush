@@ -306,3 +306,14 @@ Use LookAt statement to control the rotation of a tower.
 Aware of the MagicaVoxel Bonus Content.
 
 
+### 21 Another Solo Challenge ###
+
+**In this video (objectives)…**
+
+1. Understand our remaining feature set for Realm Rush.
+2. Overview of the process for shooting and damaging enemies.
+
+
+**After watching (learning outcomes)…**
+
+Ready to take on another big solo challenge.
