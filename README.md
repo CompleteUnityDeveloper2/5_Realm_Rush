@@ -317,3 +317,17 @@ Aware of the MagicaVoxel Bonus Content.
 **After watching (learning outcomes)…**
 
 Ready to take on another big solo challenge.
+
+
+### 22 Make Tower Shoot ###
+
+**In this video (objectives)…**
+
+1. Attach a bullet particle effect to the towers.
+2. Create EnemyDamage script that recognises bullet collision.
+3. Organise enemy's hierarchical structure to properly recognise collision.
+
+
+**After watching (learning outcomes)…**
+
+Create tower bullets which successfully collide with enemy.
