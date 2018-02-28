@@ -331,3 +331,17 @@ Ready to take on another big solo challenge.
 **After watching (learning outcomes)…**
 
 Create tower bullets which successfully collide with enemy.
+
+
+### 23 Enemy HitPoints ###
+
+**In this video (objectives)…**
+
+1. Decrease enemy hitpoints when enemy is hit.
+2. Destroy enemy when hitpoints are below 1.
+
+
+**After watching (learning outcomes)…**
+
+Implement enemy hitpoint and kill enemies.
+
