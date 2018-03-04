@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMesh: {fileID: 65598544800772234}
+  hitPoints: 3
 --- !u!114 &114941686308246830
 MonoBehaviour:
   m_ObjectHideFlags: 1

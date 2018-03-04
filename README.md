@@ -345,3 +345,17 @@ Create tower bullets which successfully collide with enemy.
 
 Implement enemy hitpoint and kill enemies.
 
+
+### 24 Check For Distance ###
+
+**In this video (objectives)…**
+
+1. Create a condition where towers only shoot if enemy is within range.
+2. Implement Vector3.Distance to determine distance from towers to enemies.
+3. Turn on and off particle emission system if there is no valid enemy.
+
+
+**After watching (learning outcomes)…**
+
+Create a condition where towers only shoot if enemies are close enough.
+

@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1048199969286212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -10}
+  m_LocalPosition: {x: 60, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4701339249413134}
@@ -228,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4701339249413134}
   targetEnemy: {fileID: 0}
+  attackRange: 30
+  projectileParticle: {fileID: 198688445544397726}
 --- !u!198 &198688445544397726
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -288,7 +290,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1983835192
+  randomSeed: 28546068
   InitialModule:
     serializedVersion: 3
     enabled: 1
