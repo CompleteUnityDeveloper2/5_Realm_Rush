@@ -359,3 +359,16 @@ Implement enemy hitpoint and kill enemies.
 
 Create a condition where towers only shoot if enemies are close enough.
 
+
+### 25 Subtleties Of Spawning ###
+
+**In this video (objectives)…**
+
+1. Instantiate an enemy Manually
+2. Resolve the root cause of the errors
+3. Modify 'Pathfinder.cs' to "cache" path
+4. Drone one about caching and naming again.
+
+**After watching (learning outcomes)…**
+
+Resolve issues with instantiating at runtime by practicing in Unity's Play mode.
