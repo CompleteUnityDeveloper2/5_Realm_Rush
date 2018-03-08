@@ -369,6 +369,21 @@ Create a condition where towers only shoot if enemies are close enough.
 3. Modify 'Pathfinder.cs' to "cache" path
 4. Drone one about caching and naming again.
 
+
 **After watching (learning outcomes)…**
 
 Resolve issues with instantiating at runtime by practicing in Unity's Play mode.
+
+
+### 26 Revise Coroutines & Much More ###
+
+**In this video (objectives)…**
+
+1. Show how to search our GitHub pages
+2. Explain spawning architecture
+3. Setup a spawning coroutine.
+
+
+**After watching (learning outcomes)…**
+
+Create a simple co-routine from scratch on your own. Remember "Blooms Taxonomy"
