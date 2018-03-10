@@ -387,3 +387,18 @@ Resolve issues with instantiating at runtime by practicing in Unity's Play mode.
 **After watching (learning outcomes)…**
 
 Create a simple co-routine from scratch on your own. Remember "Blooms Taxonomy"
+
+
+### 27 Target Closest Enemy ###
+
+**In this video (objectives)…**
+
+1. Revise instantiating
+2. Challenge you to add audio to the game now
+3. Modify `Tower.cs` to find closest enemy
+4. Challenge you to write `Transform GetClosest(Transform b, Transform b)`
+
+
+**After watching (learning outcomes)…**
+
+Find the closest of two transforms.
