@@ -402,3 +402,16 @@ Create a simple co-routine from scratch on your own. Remember "Blooms Taxonomy"
 **After watching (learning outcomes)…**
 
 Find the closest of two transforms.
+
+### 28 Detecting Mouse In 3D ###
+
+**In this video (objectives)…**
+
+1. Introduce Unity's `OnMouseOver()` message
+2. Show you how to troubleshoot message issues
+3. Log out which block our mouse is over.
+
+
+**After watching (learning outcomes)…**
+
+Use Unity's built-in messages, and trboubleshoot them from docs when not working.
