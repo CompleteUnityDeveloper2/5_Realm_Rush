@@ -430,3 +430,15 @@ Use Unity's built-in messages, and troubleshoot them from docs when not working.
 **After watching (learning outcomes)…**
 
 How to filter click input based on data about what's being clicked-on.
+
+
+### 30 Bloom’s Taxonomy ###
+**In this video (objectives)…**
+
+1. Explain the basics of Bloom's Taxonomy again
+2. Challenge to complete the tower placement.
+
+
+**After watching (learning outcomes)…**
+
+Combine your knowledge of `[SerializeField]` and `Instantiate()` in one exercise.
