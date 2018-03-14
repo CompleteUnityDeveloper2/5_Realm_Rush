@@ -414,4 +414,19 @@ Find the closest of two transforms.
 
 **After watching (learning outcomes)…**
 
-Use Unity's built-in messages, and trboubleshoot them from docs when not working.
+Use Unity's built-in messages, and troubleshoot them from docs when not working.
+
+
+### 29 Conditional Instantiation ###
+
+**In this video (objectives)…**
+
+1. Recap our design decisions for `Waypoint.cs`
+2. Add the ability to flag a block as "placeable"
+3. Use version control to find a bug we introduced
+4. Differentiate between valid and invalid tower clicks.
+
+
+**After watching (learning outcomes)…**
+
+How to filter click input based on data about what's being clicked-on.
