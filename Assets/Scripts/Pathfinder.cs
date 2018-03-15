@@ -29,11 +29,6 @@ public class Pathfinder : MonoBehaviour {
         return path;
     }
 
-    public Waypoint GetWaypointAt(Vector2Int coordinates)
-    {
-        return grid[coordinates];
-    }
-
     private void CalculatePath()
     {
         LoadBlocks();
