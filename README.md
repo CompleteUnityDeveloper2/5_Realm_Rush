@@ -442,3 +442,17 @@ How to filter click input based on data about what's being clicked-on.
 **After watching (learning outcomes)…**
 
 Combine your knowledge of `[SerializeField]` and `Instantiate()` in one exercise.
+
+
+### 31 Particles & Algorithm Improvements ###
+
+**In this video (objectives)…**
+
+1. Fix a minor bug in our pathfinding algorithm
+2. Add cool jet booster particles to our enemy
+3. Add hit and death particle effects.
+
+
+**After watching (learning outcomes)…**
+
+Use particles effects two different ways, either referring to a prefab on the same game object, or a separate asset.
