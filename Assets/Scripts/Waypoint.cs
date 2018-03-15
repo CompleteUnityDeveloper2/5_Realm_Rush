@@ -32,7 +32,7 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable)
             {
-                isPlaceable = FindObjectOfType<TowerFactory>().AddTower(this);
+                 FindObjectOfType<TowerFactory>().AddTower(this);
             }
             else
             {

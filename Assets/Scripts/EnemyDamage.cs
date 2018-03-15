@@ -10,10 +10,6 @@ public class EnemyDamage : MonoBehaviour {
     [SerializeField] ParticleSystem hitParticlePrefab;
     [SerializeField] ParticleSystem deathParticlePrefab;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
