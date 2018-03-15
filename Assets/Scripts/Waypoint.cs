@@ -10,15 +10,8 @@ public class Waypoint : MonoBehaviour
     public bool isPlaceable = true;
 
     Vector2Int gridPos;
-    TowerFactory towerFactory;
 
     const int gridSize = 10;
-    const string towerParentName = "Towers";
-
-    void Start()
-    {
-        towerFactory = FindObjectOfType<TowerFactory>();
-    }
 
     public int GetGridSize()
     {
@@ -39,8 +32,7 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable)
             {
-                towerFactory.AddTower(transform.position);
-                isPlaceable = false;
+                isPlaceable = FindObjectOfType<TowerFactory>().AddTower(this);
             }
             else
             {
