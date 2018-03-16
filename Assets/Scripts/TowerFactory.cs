@@ -9,36 +9,37 @@ public class TowerFactory : MonoBehaviour {
 
     Queue<Tower> towerQueue = new Queue<Tower>();
 
-    public bool AddTower(Waypoint waypoint)
+    public void AddTower(Waypoint baseWaypoint)
     {
-        Vector3 newPos = waypoint.transform.position;
+        Vector3 newPos = baseWaypoint.transform.position;
         if (towerQueue.Count < towerLimit)
         {
-            InstantiateNewTower(waypoint, newPos);
-            return true;
+            InstantiateNewTower(baseWaypoint, newPos);
         }
-        MoveExistingTower(waypoint, newPos);
-        return false;
+        else
+        {
+            MoveExistingTower(baseWaypoint, newPos);
+        }
     }
 
-    private void InstantiateNewTower(Waypoint waypoint, Vector3 newPos)
+    private void InstantiateNewTower(Waypoint baseWaypoint, Vector3 newPos)
     {
         var newTower = Instantiate(towerPrefab, newPos, Quaternion.identity);
 
-        newTower.waypoint = waypoint;
-        waypoint.isPlaceable = false;
+        newTower.baseWaypoint = baseWaypoint;
+        baseWaypoint.isPlaceable = false;
 
         towerQueue.Enqueue(newTower);
     }
 
-    private void MoveExistingTower(Waypoint newWayPoint, Vector3 newPos)
+    private void MoveExistingTower(Waypoint newBaseWaypoint, Vector3 newPos)
     {
         var oldTower = towerQueue.Dequeue();
 
-        oldTower.waypoint.isPlaceable = true;
-        newWayPoint.isPlaceable = false;
+        oldTower.baseWaypoint.isPlaceable = true;
+        newBaseWaypoint.isPlaceable = false;
 
-        oldTower.waypoint = newWayPoint;
+        oldTower.baseWaypoint = newBaseWaypoint;
         oldTower.transform.position = newPos;
 
         towerQueue.Enqueue(oldTower); // stick it back on top of the pile
