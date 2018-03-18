@@ -456,3 +456,18 @@ Combine your knowledge of `[SerializeField]` and `Instantiate()` in one exercise
 **After watching (learning outcomes)…**
 
 Use particles effects two different ways, either referring to a prefab on the same game object, or a separate asset.
+
+
+### 32 Circular Or Ring Buffers ###
+
+**In this video (objectives)…**
+
+1. Note we've changed to Unity 2017.3.**1**
+2. Introduce a new mnemonic `www.wow`
+3. Overview ring or circular buffers
+4. Briefly discuss performance and memory fragmentation.
+
+
+**After watching (learning outcomes)…**
+
+Explain in simple terms what a ring buffer is.
