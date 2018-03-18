@@ -471,3 +471,17 @@ Use particles effects two different ways, either referring to a prefab on the sa
 **After watching (learning outcomes)…**
 
 Explain in simple terms what a ring buffer is.
+
+### 33 Implementing A Ring Buffer ###
+
+**In this video (objectives)…**
+
+1. Create a Tower Factory class
+2. Move the tower prefab, and max towers there
+3. Introduce `this` in C#
+4. Wire-up our tower factory, at least in outline.
+
+
+**After watching (learning outcomes)…**
+
+Use the `this` keyword to pass instances around.
