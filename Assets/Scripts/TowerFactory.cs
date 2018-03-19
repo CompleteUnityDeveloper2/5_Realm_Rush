@@ -11,19 +11,19 @@ public class TowerFactory : MonoBehaviour {
 
     public void AddTower(Waypoint baseWaypoint)
     {
-        Vector3 newPos = baseWaypoint.transform.position;
         if (towerQueue.Count < towerLimit)
         {
-            InstantiateNewTower(baseWaypoint, newPos);
+            InstantiateNewTower(baseWaypoint);
         }
         else
         {
-            MoveExistingTower(baseWaypoint, newPos);
+            MoveExistingTower(baseWaypoint);
         }
     }
 
-    private void InstantiateNewTower(Waypoint baseWaypoint, Vector3 newPos)
+    private void InstantiateNewTower(Waypoint baseWaypoint)
     {
+        Vector3 newPos = baseWaypoint.transform.position;
         var newTower = Instantiate(towerPrefab, newPos, Quaternion.identity);
 
         newTower.baseWaypoint = baseWaypoint;
@@ -32,15 +32,15 @@ public class TowerFactory : MonoBehaviour {
         towerQueue.Enqueue(newTower);
     }
 
-    private void MoveExistingTower(Waypoint newBaseWaypoint, Vector3 newPos)
+    private void MoveExistingTower(Waypoint baseWaypoint)
     {
         var oldTower = towerQueue.Dequeue();
 
         oldTower.baseWaypoint.isPlaceable = true;
-        newBaseWaypoint.isPlaceable = false;
+        baseWaypoint.isPlaceable = false;
 
-        oldTower.baseWaypoint = newBaseWaypoint;
-        oldTower.transform.position = newPos;
+        oldTower.baseWaypoint = baseWaypoint;
+        oldTower.transform.position = baseWaypoint.transform.position;
 
         towerQueue.Enqueue(oldTower); // stick it back on top of the pile
     }
