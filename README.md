@@ -485,3 +485,17 @@ Explain in simple terms what a ring buffer is.
 **After watching (learning outcomes)…**
 
 Use the `this` keyword to pass instances around.
+
+
+### 34 Revising C# Queues ###
+
+**In this video (objectives)…**
+
+1. Discuss using a C# queue for a ring buffer
+2. Practice pseudo coding
+3. Get the queue managing its self.
+
+
+**After watching (learning outcomes)…**
+
+Implement simple C# queues from scratch.
