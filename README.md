@@ -499,3 +499,17 @@ Use the `this` keyword to pass instances around.
 **After watching (learning outcomes)…**
 
 Implement simple C# queues from scratch.
+
+
+### 35 How To Destroy Particles ###
+
+**In this video (objectives)…**
+
+1. Finish our ring buffer
+2. Discuss how to destroy particle systems
+3. Use Unity's `Destory(object, delay)` function
+
+
+**After watching (learning outcomes)…**
+
+Destroy instantiated particle effects when they have finished playing.
