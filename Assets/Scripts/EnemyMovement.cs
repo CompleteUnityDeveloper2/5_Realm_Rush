@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour {
 
@@ -31,6 +32,8 @@ public class EnemyMovement : MonoBehaviour {
     {
         var vfx = Instantiate(goalParticle, transform.position, Quaternion.identity);
         vfx.Play();
+        Destroy(vfx.gameObject, vfx.main.duration);
+
         Destroy(gameObject);
     }
 }

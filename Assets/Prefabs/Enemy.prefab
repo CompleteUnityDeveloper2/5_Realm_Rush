@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54660159372924652}
   - component: {fileID: 114941686308246830}
   - component: {fileID: 114078703179129330}
+  - component: {fileID: 65087181507557202}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -378,6 +379,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65087181507557202
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289942997295908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65598544800772234
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -417,6 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d2b285a3eae40c780390b54bcaff27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementPeriod: 0.3
+  goalParticle: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
+    type: 2}
 --- !u!198 &198020704787909646
 ParticleSystem:
   m_ObjectHideFlags: 1
