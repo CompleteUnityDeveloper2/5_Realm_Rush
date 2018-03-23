@@ -513,3 +513,18 @@ Implement simple C# queues from scratch.
 **After watching (learning outcomes)…**
 
 Destroy instantiated particle effects when they have finished playing.
+
+
+### 36 Complete Game Loop ###
+
+**In this video (objectives)…**
+
+1. Speed up enemy movement
+2. Destroy enemies when they reach the end of their path
+3. Trigger enemy goal particles
+
+
+**After watching (learning outcomes)…**
+
+Explode enemies after they have completed their path.
+

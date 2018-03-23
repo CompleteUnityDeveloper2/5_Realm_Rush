@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+    [SerializeField] float movementPeriod = .5f;
+    [SerializeField] ParticleSystem goalParticle;
+
+    // Use this for initialization
+    void Start ()
     {
         Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
         var path = pathfinder.GetPath();
@@ -19,8 +22,17 @@ public class EnemyMovement : MonoBehaviour {
         foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(movementPeriod);
         }
-        print("Ending patrol");
+        SelfDestruct();
+    }
+
+    private void SelfDestruct()
+    {
+        var vfx = Instantiate(goalParticle, transform.position, Quaternion.identity);
+        vfx.Play();
+        Destroy(vfx.gameObject, vfx.main.duration);
+
+        Destroy(gameObject); // the enemy
     }
 }
