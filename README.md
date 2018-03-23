@@ -528,3 +528,15 @@ Destroy instantiated particle effects when they have finished playing.
 
 Explode enemies after they have completed their path.
 
+
+### 37 Health For Base ###
+
+**In this video (objectives)…**
+
+1. Increase the size of our level
+2. Create a mechanism to decrease player health when enemy reaches base
+
+
+**After watching (learning outcomes)…**
+
+Create a simple collision-based health system for the player's base.
