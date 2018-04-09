@@ -540,3 +540,18 @@ Explode enemies after they have completed their path.
 **After watching (learning outcomes)…**
 
 Create a simple collision-based health system for the player's base.
+
+
+### 38 Display Health & Score ###
+
+**In this video (objectives)…**
+
+1. Add text fields to canvas UI for player health and score
+2. Connect the player health code to the UI text
+3. Increase score whenever new enemy is spawned
+4. Connect score value to score text
+
+
+**After watching (learning outcomes)…**
+
+Create updating UI text elements for the gameplay values of score and health.
