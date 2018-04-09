@@ -555,3 +555,17 @@ Create a simple collision-based health system for the player's base.
 **After watching (learning outcomes)…**
 
 Create updating UI text elements for the gameplay values of score and health.
+
+
+### 39 Unity Post Processing Stack ###
+
+**In this video (objectives)…**
+
+1. Import the Unity Post Processing Stack
+2. Set up profile asset
+3. Modify post processing aspects such as bloom, vignette and color grading
+
+
+**After watching (learning outcomes)…**
+
+Implement Unity Post Processing Stack to create a unique look for your game.
