@@ -583,3 +583,18 @@ Implement Unity Post Processing Stack to create a unique look for your game.
 **After watching (learning outcomes)…**
 
 Implement sound effects for key moments in the game.
+
+
+### 41 PlayClipAtPoint() For SFX ###
+
+**In this video (objectives)…**
+
+1. Implement the PlayClipAtPoint() method to ensure our audio clip is played even if our GameObject is destroyed.
+2. Investigate Unity's audio setup to discovery why our audio clip is played at lower volume.
+3. Discuss 2D versus 3D spatial sounds in Unity.
+4. Implement audio track.
+
+
+**After watching (learning outcomes)…**
+
+Create sound effects that persist even if the parent GameObject is destroyed.
