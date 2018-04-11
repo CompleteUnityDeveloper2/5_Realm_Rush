@@ -569,3 +569,17 @@ Create updating UI text elements for the gameplay values of score and health.
 **After watching (learning outcomes)…**
 
 Implement Unity Post Processing Stack to create a unique look for your game.
+
+
+### 40 Hook Up SFX ###
+
+**In this video (objectives)…**
+
+1. Asset our sound design needs
+2. Trigger SFX for spawning, base damage and enemy damage
+3. Add music to the game
+
+
+**After watching (learning outcomes)…**
+
+Implement sound effects for key moments in the game.
