@@ -598,3 +598,18 @@ Implement sound effects for key moments in the game.
 **After watching (learning outcomes)…**
 
 Create sound effects that persist even if the parent GameObject is destroyed.
+
+
+### 42 Tune Your Game Moment ###
+
+**In this video (objectives)…**
+
+1. Looking at all the design levers available.
+2. Understanding your intention, and how you can execute on that.
+3. Finding the fun for a 2 minute game moment.
+4. Share!
+
+
+**After watching (learning outcomes)…**
+
+Understand what levers to pull in order to make your game moment compelling.
