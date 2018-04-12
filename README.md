@@ -613,3 +613,16 @@ Create sound effects that persist even if the parent GameObject is destroyed.
 **After watching (learning outcomes)…**
 
 Understand what levers to pull in order to make your game moment compelling.
+
+
+### 43 Section 5 Wrap Up ###
+
+**In this video (objectives)…**
+
+1. Recap of the key new concepts we've covered in this section.
+2. What to expect in the next section of the course.
+
+
+**After watching (learning outcomes)…**
+
+You'll be fired up to continue your learning journey!
